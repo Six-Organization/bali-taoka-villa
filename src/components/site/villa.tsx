@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { BedDouble, Bath, Users, Waves, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { SectionHeading } from "@/components/site/section-heading";
 import { LinkButton } from "@/components/site/link-button";
 import { site } from "@/data/site";
+import { img } from "@/data/villa-images";
 
 export function Villa() {
   const { tr } = useLanguage();
@@ -28,14 +30,14 @@ export function Villa() {
         <div className="mt-14 overflow-hidden rounded-[2rem] border border-border/60 bg-card shadow-sm lg:grid lg:grid-cols-2">
           {/* Visual */}
           <div className="relative min-h-[280px] overflow-hidden lg:min-h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2a8a92] via-[#1f6d74] to-[#1b4a4f]" />
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden>
-              <circle cx="410" cy="70" r="46" fill="#f4c86b" opacity="0.7" />
-              <path d="M0 250 Q 250 215 500 255 V400 H0 Z" fill="#17565c" opacity="0.7" />
-              {Array.from({ length: 6 }).map((_, i) => (
-                <path key={i} d={`M30 ${285 + i * 13} q 55 -8 110 0 t 110 0 t 110 0`} fill="none" stroke="#bfe6e8" strokeWidth="1.5" opacity="0.4" />
-              ))}
-            </svg>
+            <Image
+              src={img.living}
+              alt="Bali Taoka Villa living area"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
             <span className="absolute bottom-5 left-6 font-heading text-xl font-semibold text-ivory drop-shadow">
               {site.stay.bedrooms} BR · {tr("villa.spec.pool.value")} Pool
             </span>

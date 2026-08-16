@@ -79,7 +79,7 @@ export const t: Dict = {
   "gallery.kicker": { id: "Galeri", en: "Gallery" },
   "gallery.title": { id: "Intip suasananya", en: "A peek inside" },
   "gallery.subtitle": { id: "Kolam, kamar, dan sudut-sudut favorit villa.", en: "The pool, the rooms, and favorite corners of the villa." },
-  "gallery.note": { id: "Placeholder — ganti dengan foto asli villa Anda.", en: "Placeholder — swap with your real villa photos." },
+  "gallery.note": { id: "Foto dari listing villa. Kirim foto resolusi tinggi Anda kapan saja untuk hasil terbaik.", en: "Photos from the villa listing. Send your high-res originals anytime for the best quality." },
 
   // Location
   "location.kicker": { id: "Lokasi", en: "Location" },
@@ -111,6 +111,26 @@ export const t: Dict = {
   "book.checkout": { id: "Check-out", en: "Check-out" },
   "book.deposit": { id: "Deposit (dikembalikan)", en: "Deposit (refundable)" },
   "book.rules": { id: "Bebas rokok · Tanpa pesta · Tanpa hewan peliharaan", en: "Non-smoking · No parties · No pets" },
+
+  // Booking form
+  "form.title": { id: "Reservasi via WhatsApp", en: "Reserve via WhatsApp" },
+  "form.desc": { id: "Isi detail singkat, lalu kirim ke WhatsApp kami untuk cek ketersediaan.", en: "Fill in a few details, then send to our WhatsApp to check availability." },
+  "form.name": { id: "Nama", en: "Name" },
+  "form.name.ph": { id: "Nama lengkap Anda", en: "Your full name" },
+  "form.checkin": { id: "Tanggal Check-in", en: "Check-in Date" },
+  "form.nights": { id: "Lama Menginap", en: "Length of Stay" },
+  "form.guests": { id: "Jumlah Tamu", en: "Number of Guests" },
+  "form.nights.unit": { id: "malam", en: "night(s)" },
+  "form.guests.unit": { id: "tamu", en: "guest(s)" },
+  "form.submit": { id: "Kirim ke WhatsApp", en: "Send to WhatsApp" },
+  "form.or": { id: "atau hubungi langsung", en: "or reach us directly" },
+  // WhatsApp message
+  "form.msg.intro": { id: "Halo Bali Taoka Villa! Saya ingin menanyakan ketersediaan:", en: "Hello Bali Taoka Villa! I'd like to check availability:" },
+  "form.msg.name": { id: "Nama", en: "Name" },
+  "form.msg.checkin": { id: "Check-in", en: "Check-in" },
+  "form.msg.nights": { id: "Lama menginap", en: "Nights" },
+  "form.msg.guests": { id: "Jumlah tamu", en: "Guests" },
+  "form.msg.outro": { id: "Mohon info ketersediaan & harga. Terima kasih!", en: "Please share availability & pricing. Thank you!" },
 
   // Footer
   "footer.tagline": { id: "Villa kolam pribadi di dekat Tanah Lot, Tabanan, Bali.", en: "A private pool villa near Tanah Lot, Tabanan, Bali." },

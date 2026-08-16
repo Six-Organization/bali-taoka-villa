@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { Waves, Home, MapPin } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { SectionHeading } from "@/components/site/section-heading";
+import { img } from "@/data/villa-images";
 
 export function About() {
   const { tr } = useLanguage();
@@ -41,21 +43,20 @@ export function About() {
             </ul>
           </div>
 
-          {/* Photo panel — pool scene placeholder */}
+          {/* Photo panel */}
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border/60 shadow-xl sm:aspect-square lg:aspect-[4/5]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#3fa1a8] via-[#2a8a92] to-[#1b4a4f]" />
-              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden>
-                <circle cx="320" cy="90" r="55" fill="#f4c86b" opacity="0.7" />
-                <path d="M0 300 Q 200 265 400 300 V500 H0 Z" fill="#1f6d74" opacity="0.6" />
-                <path d="M0 350 Q 200 315 400 355 V500 H0 Z" fill="#17565c" opacity="0.7" />
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <path key={i} d={`M20 ${380 + i * 14} q 45 -8 90 0 t 90 0 t 90 0`} fill="none" stroke="#bfe6e8" strokeWidth="1.5" opacity="0.4" />
-                ))}
-              </svg>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoal/60 to-transparent p-6">
+              <Image
+                src={img.exterior}
+                alt="Bali Taoka Villa exterior"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="font-heading text-lg font-semibold text-ivory">
-                  {tr("about.feature.pool")}
+                  {tr("about.feature.entire")}
                 </p>
                 <p className="text-sm text-ivory/80">Beraban, Tabanan · Bali</p>
               </div>

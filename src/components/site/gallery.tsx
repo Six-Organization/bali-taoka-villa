@@ -1,9 +1,9 @@
 "use client";
 
-import { ImageIcon } from "lucide-react";
+import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
 import { SectionHeading } from "@/components/site/section-heading";
-import { galleryTiles } from "@/data/content";
+import { galleryPhotos } from "@/data/villa-images";
 import { cn } from "@/lib/utils";
 
 export function Gallery() {
@@ -18,23 +18,23 @@ export function Gallery() {
           subtitle={tr("gallery.subtitle")}
         />
 
-        <div className="mt-12 grid auto-rows-[150px] grid-cols-2 gap-4 sm:auto-rows-[190px] sm:grid-cols-4">
-          {galleryTiles.map((tile, i) => (
+        <div className="mt-12 grid auto-rows-[150px] grid-cols-2 gap-4 sm:auto-rows-[200px] sm:grid-cols-4">
+          {galleryPhotos.map((tile) => (
             <div
-              key={tile.label.en}
+              key={tile.src}
               className={cn(
                 "group relative overflow-hidden rounded-2xl border border-border/60 shadow-sm",
-                i === 0 && "col-span-2 row-span-2",
+                tile.big && "col-span-2 row-span-2",
               )}
             >
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  backgroundImage: `linear-gradient(135deg, hsl(${tile.from}), hsl(${tile.to}))`,
-                }}
+              <Image
+                src={tile.src}
+                alt={pick(tile.label)}
+                fill
+                sizes={tile.big ? "(min-width: 640px) 50vw, 100vw" : "(min-width: 640px) 25vw, 50vw"}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 to-transparent" />
-              <ImageIcon className="absolute right-3 top-3 size-4 text-ivory/60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
               <p className="absolute bottom-3 left-4 font-heading text-sm font-semibold text-ivory drop-shadow sm:text-base">
                 {pick(tile.label)}
               </p>

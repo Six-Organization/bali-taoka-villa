@@ -6,7 +6,6 @@ import { Logo } from "@/components/site/logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLanguage } from "@/components/language-provider";
 import { LinkButton } from "@/components/site/link-button";
-import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -71,9 +70,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <LanguageSwitcher className="hidden sm:inline-flex" />
           <LinkButton
-            href={site.links.booking}
-            target="_blank"
-            rel="noreferrer"
+            href="#book"
             variant="gold"
             className="hidden h-10 gap-1.5 rounded-full px-4 lg:inline-flex"
           >
@@ -124,9 +121,7 @@ export function Navbar() {
           <div className="mt-3 flex items-center justify-between gap-3 border-t border-border/60 pt-4">
             <LanguageSwitcher />
             <LinkButton
-              href={site.links.booking}
-              target="_blank"
-              rel="noreferrer"
+              href="#book"
               onClick={() => setOpen(false)}
               variant="gold"
               className="h-11 flex-1 gap-1.5 rounded-full"
